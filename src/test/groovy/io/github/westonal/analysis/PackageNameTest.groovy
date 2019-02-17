@@ -27,4 +27,9 @@ class PackageNameTest {
             name.name = 'B'
         }
     }
+
+    @Test
+    void toStringFormat() {
+        assertEquals('a', new PackageName(name: 'a').toString())
+    }
 }
