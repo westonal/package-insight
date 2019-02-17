@@ -3,20 +3,17 @@ package io.github.westonal.analysis
 import org.junit.Test
 
 import static groovy.test.GroovyAssert.shouldFail
-import static org.junit.Assert.assertEquals
-import static org.junit.Assert.assertNotEquals
 
 class PackageNameTest {
 
     @Test
     void assertEqualityContract_Equal() {
-        assertEquals(new PackageName(name: 'A'), new PackageName(name: 'A'))
-
+        assert new PackageName(name: 'A') == new PackageName(name: 'A')
     }
 
     @Test
     void assertEqualityContract_NotEqual() {
-        assertNotEquals(new PackageName(name: 'A'), new PackageName(name: 'B'))
+        assert new PackageName(name: 'A') != new PackageName(name: 'B')
     }
 
     @Test
@@ -30,6 +27,6 @@ class PackageNameTest {
 
     @Test
     void toStringFormat() {
-        assertEquals('a', new PackageName(name: 'a').toString())
+        assert new PackageName(name: 'a').toString() == 'a'
     }
 }
